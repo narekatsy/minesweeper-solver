@@ -8,7 +8,6 @@ def play_game_gui():
     root = tk.Tk()
     root.title("Minesweeper")
 
-    # Create Minesweeper game with the default difficulty
     rows = gui.MinesweeperGUI.DIFFICULTY_LEVELS['Beginner']['rows']
     cols = gui.MinesweeperGUI.DIFFICULTY_LEVELS['Beginner']['cols']
     num_mines = gui.MinesweeperGUI.DIFFICULTY_LEVELS['Beginner']['mines']
@@ -17,7 +16,7 @@ def play_game_gui():
     root.mainloop()
 
 
-def play_game_time():
+def play_game_time(difficulty = 'Beginner'):
     """
     Start the Minesweeper game with GUI. (for tracking time)
     
@@ -28,10 +27,9 @@ def play_game_time():
 
     root.attributes('-fullscreen', True)
 
-    # Create Minesweeper game with the default difficulty
-    rows = gui.MinesweeperGUI.DIFFICULTY_LEVELS['Beginner']['rows']
-    cols = gui.MinesweeperGUI.DIFFICULTY_LEVELS['Beginner']['cols']
-    num_mines = gui.MinesweeperGUI.DIFFICULTY_LEVELS['Beginner']['mines']
+    rows = gui.MinesweeperGUI.DIFFICULTY_LEVELS[difficulty]['rows']
+    cols = gui.MinesweeperGUI.DIFFICULTY_LEVELS[difficulty]['cols']
+    num_mines = gui.MinesweeperGUI.DIFFICULTY_LEVELS[difficulty]['mines']
 
     game = gui.MinesweeperGUI(root, rows, cols, num_mines)
     root.mainloop()
